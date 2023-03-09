@@ -4,13 +4,16 @@ import 'package:freezed_repository/data.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
-part 'city_repository.freezed.dart';
-part 'city_repository.g.dart';
+part 'repository_contributor_repository.freezed.dart';
+part 'repository_contributor_repository.g.dart';
 
 class CityRepository {
   final Api _api = Api();
   final String _riverpodRepositoryContributorsPath = "repos/rrousselGit/riverpod/contributors";
 
+  Future<RepositoryContributorsResponse> getGithubRepositoryContributor(RepositoryContributorsRequest repositoryContributorsRequest) async {
+    return RepositoryContributorsResponse(anon: '', avatarUrl: '', contributions: 0, eventsUrl: '', followersUrl: '', followingUrl: '', gistsUrl: '', gravatarId: '', htmlUrl: '', id: '', nodeId: '', organizationsUrl: '', receivedEventsUrl: '', reposUrl: '', siteAdmin: false, starredUrl: '', subscriptionsUrl: '', type: '', url: '');
+  }
 }
 
 @freezed
