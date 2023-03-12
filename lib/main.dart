@@ -29,10 +29,13 @@ class MyHomePage extends StatelessWidget{
         child: ElevatedButton(
           onPressed: () async { 
             RepositoryContributorRepository repositoryContributorRepository = RepositoryContributorRepository();
-            List<RepositoryContributorsResponse> repositoryContributorsRequest = await repositoryContributorRepository.getGithubRepositoryContributor(RepositoryContributorsRequest());
+            List<RepositoryContributorsResponse> repositoryContributorsRequest = 
+              await repositoryContributorRepository.getGithubRepositoryContributor(
+                RepositoryContributorsRequest(perPage: "5")
+              );
             print(repositoryContributorsRequest);
           },
-        child: Text("TEST"), 
+        child: const Text("TEST"), 
         ),
       ),
     );

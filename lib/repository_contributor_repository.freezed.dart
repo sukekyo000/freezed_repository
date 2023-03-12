@@ -24,9 +24,9 @@ mixin _$RepositoryContributorsRequest {
   @JsonKey(name: 'anon')
   String? get anon => throw _privateConstructorUsedError;
   @JsonKey(name: 'per_page')
-  int? get perPage => throw _privateConstructorUsedError;
+  String? get perPage => throw _privateConstructorUsedError;
   @JsonKey(name: 'page')
-  int? get page => throw _privateConstructorUsedError;
+  String? get page => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,8 +44,8 @@ abstract class $RepositoryContributorsRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'anon') String? anon,
-      @JsonKey(name: 'per_page') int? perPage,
-      @JsonKey(name: 'page') int? page});
+      @JsonKey(name: 'per_page') String? perPage,
+      @JsonKey(name: 'page') String? page});
 }
 
 /// @nodoc
@@ -74,11 +74,11 @@ class _$RepositoryContributorsRequestCopyWithImpl<$Res,
       perPage: freezed == perPage
           ? _value.perPage
           : perPage // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -94,8 +94,8 @@ abstract class _$$_RepositoryContributorsRequestCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'anon') String? anon,
-      @JsonKey(name: 'per_page') int? perPage,
-      @JsonKey(name: 'page') int? page});
+      @JsonKey(name: 'per_page') String? perPage,
+      @JsonKey(name: 'page') String? page});
 }
 
 /// @nodoc
@@ -123,11 +123,11 @@ class __$$_RepositoryContributorsRequestCopyWithImpl<$Res>
       perPage: freezed == perPage
           ? _value.perPage
           : perPage // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -151,10 +151,10 @@ class _$_RepositoryContributorsRequest
   final String? anon;
   @override
   @JsonKey(name: 'per_page')
-  final int? perPage;
+  final String? perPage;
   @override
   @JsonKey(name: 'page')
-  final int? page;
+  final String? page;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -204,8 +204,8 @@ abstract class _RepositoryContributorsRequest
     implements RepositoryContributorsRequest {
   const factory _RepositoryContributorsRequest(
           {@JsonKey(name: 'anon') final String? anon,
-          @JsonKey(name: 'per_page') final int? perPage,
-          @JsonKey(name: 'page') final int? page}) =
+          @JsonKey(name: 'per_page') final String? perPage,
+          @JsonKey(name: 'page') final String? page}) =
       _$_RepositoryContributorsRequest;
 
   factory _RepositoryContributorsRequest.fromJson(Map<String, dynamic> json) =
@@ -216,10 +216,10 @@ abstract class _RepositoryContributorsRequest
   String? get anon;
   @override
   @JsonKey(name: 'per_page')
-  int? get perPage;
+  String? get perPage;
   @override
   @JsonKey(name: 'page')
-  int? get page;
+  String? get page;
   @override
   @JsonKey(ignore: true)
   _$$_RepositoryContributorsRequestCopyWith<_$_RepositoryContributorsRequest>

@@ -37,8 +37,8 @@ class RepositoryContributorRepository {
 class RepositoryContributorsRequest with _$RepositoryContributorsRequest {
   const factory RepositoryContributorsRequest({
     @JsonKey(name: 'anon') String? anon,
-    @JsonKey(name: 'per_page') int? perPage,
-    @JsonKey(name: 'page') int? page,
+    @JsonKey(name: 'per_page') String? perPage,
+    @JsonKey(name: 'page') String? page,
   }) = _RepositoryContributorsRequest;
 
   factory RepositoryContributorsRequest.fromJson(Map<String, Object?> json)

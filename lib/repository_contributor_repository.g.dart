@@ -10,8 +10,8 @@ _$_RepositoryContributorsRequest _$$_RepositoryContributorsRequestFromJson(
         Map<String, dynamic> json) =>
     _$_RepositoryContributorsRequest(
       anon: json['anon'] as String?,
-      perPage: json['per_page'] as int?,
-      page: json['page'] as int?,
+      perPage: json['per_page'] as String?,
+      page: json['page'] as String?,
     );
 
 Map<String, dynamic> _$$_RepositoryContributorsRequestToJson(
