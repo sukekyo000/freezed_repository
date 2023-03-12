@@ -26,7 +26,7 @@ _$_RepositoryContributorsResponse _$$_RepositoryContributorsResponseFromJson(
         Map<String, dynamic> json) =>
     _$_RepositoryContributorsResponse(
       anon: json['login'] as String,
-      id: json['id'] as String,
+      id: json['id'] as int,
       nodeId: json['node_id'] as String,
       avatarUrl: json['avatar_url'] as String,
       gravatarId: json['gravatar_id'] as String,

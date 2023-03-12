@@ -1,18 +1,35 @@
 
-import 'package:freezed_repository/data.dart';
+import 'dart:convert';
 
+import 'package:freezed_repository/data.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart';
 
 part 'repository_contributor_repository.freezed.dart';
 part 'repository_contributor_repository.g.dart';
 
-class CityRepository {
+class RepositoryContributorRepository {
   final Api _api = Api();
   final String _riverpodRepositoryContributorsPath = "repos/rrousselGit/riverpod/contributors";
+  final List<RepositoryContributorsResponse> errorResponse = [];
 
-  Future<RepositoryContributorsResponse> getGithubRepositoryContributor(RepositoryContributorsRequest repositoryContributorsRequest) async {
-    return RepositoryContributorsResponse(anon: '', avatarUrl: '', contributions: 0, eventsUrl: '', followersUrl: '', followingUrl: '', gistsUrl: '', gravatarId: '', htmlUrl: '', id: '', nodeId: '', organizationsUrl: '', receivedEventsUrl: '', reposUrl: '', siteAdmin: false, starredUrl: '', subscriptionsUrl: '', type: '', url: '');
+  Future<List<RepositoryContributorsResponse>> getGithubRepositoryContributor(RepositoryContributorsRequest repositoryContributorsRequest) async {
+    Response response = await _api.githubApi(_riverpodRepositoryContributorsPath, repositoryContributorsRequest.toJson());
+
+    if(response.statusCode == 200){
+      List<dynamic> responseJson = jsonDecode(response.body);
+
+      List<RepositoryContributorsResponse> repositoryContributorsResponseList = [];
+
+      for(dynamic repositoryContributorsResponse in responseJson){
+        repositoryContributorsResponseList.add(RepositoryContributorsResponse.fromJson(repositoryContributorsResponse));
+      }
+
+      return repositoryContributorsResponseList;
+    } else {
+      return errorResponse;
+    }
   }
 }
 
@@ -32,7 +49,7 @@ class RepositoryContributorsRequest with _$RepositoryContributorsRequest {
 class RepositoryContributorsResponse with _$RepositoryContributorsResponse {
   const factory RepositoryContributorsResponse({
     @JsonKey(name: 'login') required String anon,
-    @JsonKey(name: 'id') required String id,
+    @JsonKey(name: 'id') required int id,
     @JsonKey(name: 'node_id') required String nodeId,
     @JsonKey(name: 'avatar_url') required String avatarUrl,
     @JsonKey(name: 'gravatar_id') required String gravatarId,

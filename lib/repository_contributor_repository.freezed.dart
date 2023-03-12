@@ -236,7 +236,7 @@ mixin _$RepositoryContributorsResponse {
   @JsonKey(name: 'login')
   String get anon => throw _privateConstructorUsedError;
   @JsonKey(name: 'id')
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'node_id')
   String get nodeId => throw _privateConstructorUsedError;
   @JsonKey(name: 'avatar_url')
@@ -288,7 +288,7 @@ abstract class $RepositoryContributorsResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'login') String anon,
-      @JsonKey(name: 'id') String id,
+      @JsonKey(name: 'id') int id,
       @JsonKey(name: 'node_id') String nodeId,
       @JsonKey(name: 'avatar_url') String avatarUrl,
       @JsonKey(name: 'gravatar_id') String gravatarId,
@@ -350,7 +350,7 @@ class _$RepositoryContributorsResponseCopyWithImpl<$Res,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       nodeId: null == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
@@ -434,7 +434,7 @@ abstract class _$$_RepositoryContributorsResponseCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'login') String anon,
-      @JsonKey(name: 'id') String id,
+      @JsonKey(name: 'id') int id,
       @JsonKey(name: 'node_id') String nodeId,
       @JsonKey(name: 'avatar_url') String avatarUrl,
       @JsonKey(name: 'gravatar_id') String gravatarId,
@@ -495,7 +495,7 @@ class __$$_RepositoryContributorsResponseCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       nodeId: null == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
@@ -603,7 +603,7 @@ class _$_RepositoryContributorsResponse
   final String anon;
   @override
   @JsonKey(name: 'id')
-  final String id;
+  final int id;
   @override
   @JsonKey(name: 'node_id')
   final String nodeId;
@@ -772,7 +772,7 @@ abstract class _RepositoryContributorsResponse
           {@JsonKey(name: 'login')
               required final String anon,
           @JsonKey(name: 'id')
-              required final String id,
+              required final int id,
           @JsonKey(name: 'node_id')
               required final String nodeId,
           @JsonKey(name: 'avatar_url')
@@ -817,7 +817,7 @@ abstract class _RepositoryContributorsResponse
   String get anon;
   @override
   @JsonKey(name: 'id')
-  String get id;
+  int get id;
   @override
   @JsonKey(name: 'node_id')
   String get nodeId;
