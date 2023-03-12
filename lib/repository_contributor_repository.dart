@@ -22,8 +22,8 @@ class RepositoryContributorRepository {
 
       List<RepositoryContributorsResponse> repositoryContributorsResponseList = [];
 
-      for(dynamic repositoryContributorsResponse in responseJson){
-        repositoryContributorsResponseList.add(RepositoryContributorsResponse.fromJson(repositoryContributorsResponse));
+      for(dynamic repositoryContributorsResponseJson in responseJson){
+        repositoryContributorsResponseList.add(RepositoryContributorsResponse.fromJson(repositoryContributorsResponseJson));
       }
 
       return repositoryContributorsResponseList;
